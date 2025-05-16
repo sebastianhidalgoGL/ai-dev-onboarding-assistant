@@ -48,7 +48,9 @@ banana-bot-streamlit/
    make install
    ```
 
-3. **Start the Streamlit app**
+3. Create the folder .streamlit and file secrets.toml in the root of the project,  then add there your OpenAI key
+
+4. **Start the Streamlit app**
 
    ```bash
    make start

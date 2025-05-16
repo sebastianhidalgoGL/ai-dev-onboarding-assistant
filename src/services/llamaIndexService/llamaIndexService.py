@@ -2,7 +2,7 @@ from openai import OpenAI
 import streamlit as st
 import openai
 from llama_index.llms.openai import OpenAI
-from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings, readers
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
@@ -18,7 +18,6 @@ class llamaIndexService:
         return self.index.as_chat_engine()
         
     def load_data(self):
-     reader = readers.TextReader()
      reader = SimpleDirectoryReader(input_dir="src/data", recursive=True)
      docs = reader.load_data()
      Settings.llm = OpenAI(

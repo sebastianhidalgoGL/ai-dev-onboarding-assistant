@@ -1,5 +1,5 @@
-from chat import Chat
-from message import Message
+from src.services.streamLitService.chat import Chat
+from src.services.streamLitService.message import Message
 import streamlit as st
 from constants import Avatars, LOGO
 

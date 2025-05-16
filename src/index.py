@@ -1,5 +1,5 @@
-from streamLitService import StreamLitService
-from llamaIndexService import llamaIndexService
+from src.services.streamLitService.streamLitService import StreamLitService
+from src.services.llamaIndexService.llamaIndexService import llamaIndexService
 def main():
     llamaIndexServiceInstance = llamaIndexService()
     streamLitServiceInstance = StreamLitService(llamaIndexServiceInstance)
