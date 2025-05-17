@@ -15,7 +15,7 @@ RUN git clone https://github.com/sebastianhidalgoGL/ai-dev-onboarding-assistant.
 # Install dependencies
 RUN pip3 install -r requirements.txt
 
-#RUN pip3 install -e .
+RUN pip3 install -e .
 
 EXPOSE 8501
 
