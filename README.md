@@ -1,4 +1,4 @@
-# 🍌 Banana Bot Streamlit
+# 🍌 AI Dev Onboarding Bot
 
 A **Streamlit** web application frontend for interacting with the Banana Bot project, designed to provide a clean interface and streamline common actions using a `Makefile`.
 
