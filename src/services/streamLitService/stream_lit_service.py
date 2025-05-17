@@ -36,7 +36,9 @@ class StreamLitService:
         st.session_state["messages"].append(Message("user", chat_prompt))
 
     def generate_assistant_response(self, chat_prompt):
-        with st.chat_message("assistant", avatar=Avatars["assistant"]):
+        with st.spinner("Generating..."):
             response_stream = st.session_state.chat_engine.stream_chat(chat_prompt)
+        with st.chat_message("assistant", avatar=Avatars["assistant"]):
             st.write_stream(response_stream.response_gen)
-            st.session_state["messages"].append(Message("assistant", response_stream.response))
+            st.session_state["messages"].append(Message("assistant", response_stream.response))            
+    
