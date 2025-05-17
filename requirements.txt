@@ -1,0 +1,9 @@
+Avatars
+OpenAI
+streamlit
+pandas
+watchdog
+openai
+llama-index
+llama-index-llms-openai
+llama-index-vector-stores-postgres

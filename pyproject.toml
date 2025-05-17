@@ -10,16 +10,17 @@ requires-python = ">=3.8"
 dependencies = [
     "streamlit",
     "pandas",
-    "watchdog", 
+    "watchdog",
     "openai",
     "llama-index",
     "pgvector",
     "llama-index-llms-openai",
-    "llama-index-vector-stores-postgres"
+    "llama-index-vector-stores-postgres",
+    "load_dotenv"
 ]
 
 [project.scripts]
 start = "src.index:main"
 
 [tool.setuptools]
-packages = ["src"] 
+packages = ["src", "src/env"]

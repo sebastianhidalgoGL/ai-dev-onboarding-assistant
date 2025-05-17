@@ -1,16 +1,18 @@
+import os
+
 from openai import OpenAI
-import streamlit as st
 import openai
 from llama_index.llms.openai import OpenAI
 from llama_index.core import VectorStoreIndex, Settings
 from llama_index.vector_stores.postgres import PGVectorStore
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
-SQL_PASSWORD = st.secrets["SQL_PASSWORD"]
-SQL_USER = st.secrets["SQL_USER"]
-SQL_HOST = st.secrets["SQL_HOST"]
-SQL_DB = st.secrets["SQL_DB"]
+from src.env import vars
 
+openai.api_key = vars.OPENAI_API_KEY
+SQL_PASSWORD = vars.SQL_PASSWORD
+SQL_USER = vars.SQL_USER
+SQL_HOST = vars.SQL_HOST
+SQL_DB = vars.SQL_DB
 
 def initialize_vector_store():
     vector_store = PGVectorStore(
