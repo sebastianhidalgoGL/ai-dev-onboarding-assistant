@@ -11,9 +11,14 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/sebastianhidalgoGL/ai-dev-onboarding-assistant.git
+# Remove redundant git clone as we already copied the code
+# RUN git clone https://github.com/sebastianhidalgoGL/ai-dev-onboarding-assistant.git
 
+# Install dependencies
 RUN pip3 install -r requirements.txt
+
+# Install the current package in development mode
+RUN pip3 install -e .
 
 EXPOSE 8501
 

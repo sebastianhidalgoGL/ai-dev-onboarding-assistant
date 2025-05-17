@@ -16,11 +16,11 @@ dependencies = [
     "pgvector",
     "llama-index-llms-openai",
     "llama-index-vector-stores-postgres",
-    "load_dotenv"
+    "python-dotenv"
 ]
 
 [project.scripts]
 start = "src.index:main"
 
 [tool.setuptools]
-packages = ["src", "src/env"]
+packages = ["src", "src/env", "src/data", "src/images", "src/services", "src/services/llamaIndexService", "src/services/streamLitService"]
