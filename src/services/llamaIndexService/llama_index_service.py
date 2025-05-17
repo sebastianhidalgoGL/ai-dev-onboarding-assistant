@@ -1,12 +1,10 @@
-import os
-
 from openai import OpenAI
 import openai
 from llama_index.llms.openai import OpenAI
 from llama_index.core import VectorStoreIndex, Settings
 from llama_index.vector_stores.postgres import PGVectorStore
 
-from src.env import vars
+from src.config import vars
 
 openai.api_key = vars.OPENAI_API_KEY
 SQL_PASSWORD = vars.SQL_PASSWORD
