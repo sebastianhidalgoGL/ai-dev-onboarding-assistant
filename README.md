@@ -48,9 +48,42 @@ banana-bot-streamlit/
    make install
    ```
 
-3. Create the folder .streamlit and file secrets.toml in the root of the project,  then add there your OpenAI key
+3. 🔑 Setting Up Secrets for Streamlit
 
-4. **Start the Streamlit app**
+   To securely use your OpenAI API key within the project, follow these steps:
+
+      1. **Navigate to your project root (if not already there):**
+
+   ```bash
+   cd /path/to/your/project
+   ```
+
+      2. **Create the `.streamlit` directory:**
+
+   ```bash
+   mkdir -p .streamlit
+   ```
+
+      3. **Create the `secrets.toml` file inside the `.streamlit` folder:**
+
+   ```bash
+   nano .streamlit/secrets.toml
+   ```
+
+      4. **Add your OpenAI API key to the file in the following format:**
+
+   ```toml
+   # .streamlit/secrets.toml
+   OPENAI_API_KEY = "your-openai-api-key-here"
+   ```
+
+   Replace `"your-openai-api-key-here"` with your actual API key.
+
+      5. **Save and close the file.**  
+
+   Your `secrets.toml` file is now configured, and Streamlit will be able to access the OpenAI API key securely.
+
+5. **Start the Streamlit app**
 
    ```bash
    make start
