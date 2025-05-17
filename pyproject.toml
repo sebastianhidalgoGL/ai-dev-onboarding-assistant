@@ -23,4 +23,4 @@ dependencies = [
 start = "src.index:main"
 
 [tool.setuptools]
-packages = ["src", "src.env", "src.images", "src.services", "src.services.llamaIndexService", "src.services.streamLitService"]
+packages = ["src", "src.config", "src.images", "src.services", "src.services.llamaIndexService", "src.services.streamLitService"]
