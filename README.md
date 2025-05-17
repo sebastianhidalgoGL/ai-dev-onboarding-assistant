@@ -82,33 +82,35 @@ source .venv/bin/activate
     1. **Navigate to your project root (if not already there):**
 
    ```bash
-   cd /path/to/your/project
+   cd /ai-dev-onboarding-assistant
    ```
 
-    2. **Create the `.streamlit` directory:**
+    2. **Create the `.env` directory:**
 
    ```bash
-   mkdir -p .streamlit
+   touch .env
    ```
 
-    3. **Create the `secrets.toml` file inside the `.streamlit` folder:**
+    3. Inside the `.env` file:**
 
    ```bash
-   nano .streamlit/secrets.toml
+   nano .env
    ```
+   Note: Follow the `.env.example` file
 
-    4. **Add your OpenAI API key to the file in the following format:**
+    4. **Add your OpenAI API key and SQL DB: 
 
-   ```toml
-   # .streamlit/secrets.toml
-   OPENAI_API_KEY = "your-openai-api-key-here"
+   ```bash
+   OPENAI_API_KEY="your-openai-api-key-here"
+   SQL_PASSWORD="you-sql-password"
+   SQL_USER="you-sql-user"
+   SQL_HOST="you-sql-host"
+   SQL_DB="you-sql-db"
    ```
-
-   Replace `"your-openai-api-key-here"` with your actual API key.
 
     5. **Save and close the file.**
 
-   Your `secrets.toml` file is now configured, and Streamlit will be able to access the OpenAI API key securely.
+   Your `.env` file is now configured, and Streamlit will be able to access the OpenAI API key and SQL DB securely.
 
 5. **Start the Streamlit app**
 
@@ -130,3 +132,44 @@ source .venv/bin/activate
 
 *Run `make` by itself to see all available commands.*
 
+### 🐳 Docker
+
+You can run this application using Docker in two ways:
+
+#### Using Dockerfile directly
+
+1. **Build the Docker image:**
+
+   ```bash
+   docker build -t ai-dev-onboarding-assistant .
+   ```
+
+2. **Run the container:**
+
+   ```bash
+   docker run -p 8501:8501 --env-file .env ai-dev-onboarding-assistant
+   ```
+
+   This will start the application and make it available at [http://localhost:8501](http://localhost:8501)
+
+#### Using Docker Compose
+
+1. **Make sure you have a `.env` file with your environment variables:**
+
+   Follow the instructions in the "Setting Up Secrets for Streamlit" section above to create your `.env` file.
+
+2. **Build and start the services:**
+
+   ```bash
+   docker-compose build --no-cache && docker-compose up -d
+   ```
+
+   This will build the Docker image if needed and start the container. The application will be available at [http://localhost:8501](http://localhost:8501)
+
+3. **To stop the services:**
+
+   ```bash
+   docker-compose down
+   ```
+
+**Note:** Both methods require you to have a properly configured `.env` file with your API keys and database credentials as described in the "Setting Up Secrets for Streamlit" section.
