@@ -1,12 +1,14 @@
 # AI Dev Onboarding Assistant
 
-A **Streamlit** web application frontend for interacting with the AI Dev Onboarding Assistant project, designed to provide a clean interface and streamline common actions using a `Makefile`.
+A **Streamlit** web application frontend for interacting with the AI Dev Onboarding Assistant project, designed to
+provide a clean interface and streamline common actions using a `Makefile`.
 
 ---
 
 ## 📦 Overview
 
-This repository hosts the **Streamlit-based GUI** for AI Dev Onboarding Assistant. It uses a `Makefile` to simplify environment setup, dependency management, and app execution.
+This repository hosts the **Streamlit-based GUI** for AI Dev Onboarding Assistant. It uses a `Makefile` to simplify
+environment setup, dependency management, and app execution.
 
 ---
 
@@ -42,9 +44,34 @@ ai-dev-onboarding-assistant/
    cd ai-dev-onboarding-assistant
    ```
 
-2. **Install dependencies using Make**
+**Create an environment using venv**
 
-   ```bash
+In your terminal, type:
+
+```bash
+python -m venv .venv
+```
+
+A folder named ".venv" will appear in your project. This directory is where your virtual environment and its
+dependencies are installed.
+
+**Activate your environment**
+
+In your terminal, activate your environment with one of the following commands, depending on your operating system.
+
+```bash
+# Windows command prompt
+.venv\Scripts\activate.bat
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+# macOS and Linux
+source .venv/bin/activate
+```   
+
+2. **Install dependencies using Make**
+```bash
    make install
    ```
 
@@ -52,25 +79,25 @@ ai-dev-onboarding-assistant/
 
    To securely use your OpenAI API key within the project, follow these steps:
 
-      1. **Navigate to your project root (if not already there):**
+    1. **Navigate to your project root (if not already there):**
 
    ```bash
    cd /path/to/your/project
    ```
 
-      2. **Create the `.streamlit` directory:**
+    2. **Create the `.streamlit` directory:**
 
    ```bash
    mkdir -p .streamlit
    ```
 
-      3. **Create the `secrets.toml` file inside the `.streamlit` folder:**
+    3. **Create the `secrets.toml` file inside the `.streamlit` folder:**
 
    ```bash
    nano .streamlit/secrets.toml
    ```
 
-      4. **Add your OpenAI API key to the file in the following format:**
+    4. **Add your OpenAI API key to the file in the following format:**
 
    ```toml
    # .streamlit/secrets.toml
@@ -79,7 +106,7 @@ ai-dev-onboarding-assistant/
 
    Replace `"your-openai-api-key-here"` with your actual API key.
 
-      5. **Save and close the file.**  
+    5. **Save and close the file.**
 
    Your `secrets.toml` file is now configured, and Streamlit will be able to access the OpenAI API key securely.
 
@@ -95,11 +122,11 @@ ai-dev-onboarding-assistant/
 
 ## 🧪 Common Make Commands
 
-| Command        | Description                                 |
-|----------------|---------------------------------------------|
-| `make install` | Installs Python dependencies                |
-| `make run`     | Runs the Streamlit app (alias to start)     |
-| `make run start`   | Starts the app via Streamlit                |
+| Command          | Description                             |
+|------------------|-----------------------------------------|
+| `make install`   | Installs Python dependencies            |
+| `make run`       | Runs the Streamlit app (alias to start) |
+| `make run start` | Starts the app via Streamlit            |
 
 *Run `make` by itself to see all available commands.*
 
