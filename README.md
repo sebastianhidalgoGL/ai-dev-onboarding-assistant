@@ -1,20 +1,20 @@
 # AI Dev Onboarding Assistant
 
-A **Streamlit** web application frontend for interacting with the Banana Bot project, designed to provide a clean interface and streamline common actions using a `Makefile`.
+A **Streamlit** web application frontend for interacting with the AI Dev Onboarding Assistant project, designed to provide a clean interface and streamline common actions using a `Makefile`.
 
 ---
 
 ## 📦 Overview
 
-This repository hosts the **Streamlit-based GUI** for Banana Bot. It uses a `Makefile` to simplify environment setup, dependency management, and app execution.
+This repository hosts the **Streamlit-based GUI** for AI Dev Onboarding Assistant. It uses a `Makefile` to simplify environment setup, dependency management, and app execution.
 
 ---
 
 ## 🗂️ Project Structure
 
 ```
-banana-bot-streamlit/
-├── src/                   # Application source code          # Main Streamlit app
+ai-dev-onboarding-assistant/
+├── src/                   # Application source code
 ├── .gitignore
 ├── Makefile               # CLI automation commands
 ├── pyproject.toml         # Project metadata and dependencies
@@ -38,8 +38,8 @@ banana-bot-streamlit/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/sebastianhidalgoGL/banana-bot-streamlit.git
-   cd banana-bot-streamlit
+   git clone https://github.com/sebastianhidalgoGL/ai-dev-onboarding-assistant
+   cd ai-dev-onboarding-assistant
    ```
 
 2. **Install dependencies using Make**

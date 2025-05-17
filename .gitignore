@@ -1,6 +1,15 @@
 # Streamlit
 .streamlit
 
+# Default ignored files
+/shelf/
+/.idea/
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
