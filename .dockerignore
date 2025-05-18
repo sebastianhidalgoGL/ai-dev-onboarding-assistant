@@ -1,12 +1,6 @@
 
-# Default ignored files
-/shelf/
-/.idea/
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# code editor
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -140,6 +134,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+env/
 venv/
 ENV/
 env.bak/
@@ -181,13 +176,3 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
-# Terraform secrets
-infra/secrets.auto.tfvars
-
-# Terraform state files
-infra/*.tfstate
-infra/*.tfstate.*
-infra/*.terraform
-
-

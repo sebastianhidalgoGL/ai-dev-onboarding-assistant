@@ -3,21 +3,24 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "BananaBot"
+name = "AiDevOnboardingAssistant"
 version = "0.1.0"
-description = "BananaBot - rampup tool for teams"
+description = "AiDevOnboardingAssistant - AI Developer Onboarding Assistant"
 requires-python = ">=3.8"
 dependencies = [
     "streamlit",
     "pandas",
-    "watchdog", 
+    "watchdog",
     "openai",
     "llama-index",
-    "llama-index-llms-openai"
+    "pgvector",
+    "llama-index-llms-openai",
+    "llama-index-vector-stores-postgres",
+    "python-dotenv"
 ]
 
 [project.scripts]
 start = "src.index:main"
 
 [tool.setuptools]
-packages = ["src"] 
+packages = ["src", "src.config", "src.images", "src.services", "src.services.llamaIndexService", "src.services.streamLitService"]
