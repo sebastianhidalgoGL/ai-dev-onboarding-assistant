@@ -18,6 +18,7 @@ ai-dev-onboarding-assistant/
 ├── .gitignore
 ├── Makefile               # CLI automation commands
 ├── pyproject.toml         # Project metadata and dependencies
+├── infra/                 # Terraform infrastructure code
 └── README.md
 ```
 
@@ -102,4 +103,81 @@ ai-dev-onboarding-assistant/
 | `make run start`   | Starts the app via Streamlit                |
 
 *Run `make` by itself to see all available commands.*
+
+---
+
+# Terraform Setup for Supabase and GitHub
+
+This project uses Terraform to manage infrastructure for Supabase and GitHub. Follow the steps below to set up and start using Terraform.
+
+## Prerequisites
+
+1. Install [Terraform](https://developer.hashicorp.com/terraform/downloads).
+2. Ensure you have a Supabase account and API key.
+3. Ensure you have a GitHub account and a Personal Access Token (PAT) with repository permissions.
+
+## Initial Setup
+
+1. Clone this repository:
+   ```bash
+   git clone <repository-url>
+   cd ai-dev-onboarding-assistant/infra
+   ```
+
+2. Create a `secrets.auto.tfvars` file (already included in `.gitignore`) with your credentials:
+   - Supabase API URL, API Key, Organization ID, Region, and Database Password.
+   - GitHub Token, Owner, and Repository Name.
+
+   Example:
+   ```hcl
+   supabase_api_url      = "https://api.supabase.io"
+   supabase_api_key      = "your-supabase-api-key"
+   supabase_project_name = "your-project-name"
+   supabase_org_id       = "your-org-id"
+   supabase_region       = "your-region"
+   supabase_db_password  = "your-secure-password"
+
+   github_token          = "your-github-token"
+   github_owner          = "your-github-username"
+   github_repo_name      = "your-repo-name"
+   ```
+
+3. Initialize Terraform:
+   ```bash
+   terraform init
+   ```
+
+## Usage
+
+1. Plan the infrastructure changes:
+   ```bash
+   terraform plan
+   ```
+
+2. Apply the changes to create resources:
+   ```bash
+   terraform apply
+   ```
+
+3. After applying, Terraform will output:
+   - The Supabase project ID.
+   - The GitHub repository URL.
+
+## Notes
+
+- The `secrets.auto.tfvars` file is ignored by Git to protect sensitive information.
+- Make sure to keep your API keys and tokens secure.
+
+## Cleanup
+
+To destroy the created resources, run:
+```bash
+terraform destroy
+```
+
+## Additional Resources
+
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [GitHub API Documentation](https://docs.github.com/en/rest)
 
