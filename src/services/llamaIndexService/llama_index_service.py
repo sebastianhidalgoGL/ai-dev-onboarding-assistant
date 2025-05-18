@@ -15,7 +15,7 @@ SQL_DB = vars.SQL_DB
 def initialize_vector_store():
     vector_store = PGVectorStore(
         connection_string=f"postgresql://{SQL_USER}:{SQL_PASSWORD}@{SQL_HOST}/{SQL_DB}",
-        table_name='documents'
+        table_name='data_documents'
     )
     return vector_store
 
@@ -28,7 +28,6 @@ def load_data():
         temperature=0,
         system_prompt="""
     You are an intelligent documentation companion for developers working with this codebase. Your purpose is to help new developers ramp up quickly by providing accurate, contextual information about the code, architecture, and design decisions.
-
     When responding to queries:
     1. Provide clear, concise explanations about APIs, modules, classes, functions, and design choices.
     2. Include relevant code snippets when appropriate, properly formatted and with explanations.
